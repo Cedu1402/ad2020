@@ -10,7 +10,7 @@ public class AllocationTest {
     @Test
     void testgetSizeShouldReturnSize() {
         // Arrange
-        Allocation testAllocation = new Allocation(1234);
+        Allocation testAllocation = new Allocation(1234, 45);
         assertThat(testAllocation.getSize()).isEqualTo(1234);
     }
 
