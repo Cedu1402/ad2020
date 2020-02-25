@@ -1,10 +1,6 @@
 package ch.hslu.ad.sw01;
 
-import java.util.ArrayList;
-
 public class Fibonacci {
-
-    private ArrayList<Integer> fiboValues = new ArrayList<>();
 
     /**
      * Berechne N-te Fibonacci Zahl mit einer rekursiven implementation.
@@ -15,21 +11,6 @@ public class Fibonacci {
         }
         return fiboRec1(number - 1) + fiboRec1(number - 2); // Rekursionsvorschrift
     }
-
-    /**
-     * Berechne N-te Fibonacci Zahl mit einer rekursiven implementation. Optimierte Variante.
-
-    public long fiboRec2(int number){
-        if(number <= 1){ // Rekursionsbasis
-            return fiboValues.stream()
-                    .mapToInt(Integer::intValue)
-                    .sum();
-        }
-        if(number <= 1){  // Rekursionsbasis
-            return number;
-        }
-        fiboRec1(number - 1) + fiboRec1(number - 2); // Rekursionsvorschrift
-    }*/
 
     /**
      * Berechne N-te Fibonacci Zahl mit einer iterativen implementation.

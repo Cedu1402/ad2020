@@ -8,13 +8,17 @@ public class Allocation {
     private final long size;
     private final long address;
 
-    public Allocation(long size){
+    public Allocation(long size, long address){
         this.size = size;
-        this.address = ThreadLocalRandom.current().nextLong(100);;
+        this.address = address;
     }
 
     public long getSize() {
         return size;
+    }
+
+    public long getAddress() {
+        return address;
     }
 
     @Override

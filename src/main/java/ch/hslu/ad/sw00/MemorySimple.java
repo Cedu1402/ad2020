@@ -1,5 +1,6 @@
 package ch.hslu.ad.sw00;
 import java.util.HashSet;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class MemorySimple implements  Memory{
 
@@ -16,7 +17,7 @@ public class MemorySimple implements  Memory{
             throw new OutOfMemoryError();
         }
 
-        Allocation allocation = new Allocation(size);
+        Allocation allocation = new Allocation(size, ThreadLocalRandom.current().nextLong(100));
         this.allocations.add(allocation);
         return allocation;
     }
