@@ -59,11 +59,9 @@ public class SortTest {
                 .ints(20000, 10,500000)
                 .toArray();
         Sort.shellSort(test);
-        for(int i = 1; i < test.length; i++) {
-            assertTrue(test[i - 1] < test[i]);
-            assertTrue(test[i] < test[i + 1]);
+        for(int i = 1; i < test.length - 1; i++) {
+            assertTrue(test[i - 1] <= test[i]);
+            assertTrue(test[i] <= test[i + 1]);
         }
     }
-
-
 }

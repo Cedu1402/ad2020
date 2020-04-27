@@ -14,6 +14,7 @@ public class PerformanceTest {
         testSelectionSortPerformance();
         testBubbleSortPerformance();
         testBubbleSortOptimizedPerformance();
+        testShellSortPerformance();
     }
 
     private static void testInsertSortPerformance(){
@@ -30,6 +31,10 @@ public class PerformanceTest {
 
     private static void testBubbleSortOptimizedPerformance(){
         testSortPerformance(SortEnum.BubbleSortOptimized);
+    }
+
+    private static void testShellSortPerformance(){
+        testSortPerformance(SortEnum.ShellSort);
     }
 
     /**
@@ -93,6 +98,9 @@ public class PerformanceTest {
                 break;
             case BubbleSortOptimized:
                 Sort.bubbleSortOptimized(a);
+                break;
+            case ShellSort:
+                Sort.shellSort(a);
                 break;
         }
     }

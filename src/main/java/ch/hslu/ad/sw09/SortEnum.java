@@ -4,9 +4,10 @@ public enum SortEnum {
     InsertSort("Inster Sort"),
     SelectionSort( "Selection Sort"),
     BubbleSort("Bubble Sort"),
-    BubbleSortOptimized("Bubble Sort Optimized");
+    BubbleSortOptimized("Bubble Sort Optimized"),
+    ShellSort(" Shell Sort");
 
-    private SortEnum(String value){
+    SortEnum(String value){
         this.value = value;
     }
 

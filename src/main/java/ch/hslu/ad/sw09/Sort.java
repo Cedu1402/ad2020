@@ -67,8 +67,10 @@ public class Sort{
         // {3, 2, 6, 3, 2}
         for(int step = 0; step < stepSize.length; step++){
             for(int i = stepSize[step]; i < a.length; i = i + stepSize[step]){
-                for(int j = i - stepSize[step]; j > 0 && a[j] > a[i]; j = j - stepSize[step]){
-                    swap(a, i, j);
+
+
+                for(int j = i - stepSize[step]; j >= 0 && a[j] > a[j + stepSize[step]]; j = j - stepSize[step]){
+                    swap(a, j + stepSize[step], j);
                 }
             }
         }
