@@ -10,10 +10,10 @@ public class PerformanceTest {
     private static Logger LOG = LogManager.getLogger();
 
     public static void main(String[] args) {
-        testInsertSortPerformance();
+        /*testInsertSortPerformance();
         testSelectionSortPerformance();
         testBubbleSortPerformance();
-        testBubbleSortOptimizedPerformance();
+        testBubbleSortOptimizedPerformance();*/
         testShellSortPerformance();
     }
 
@@ -37,6 +37,7 @@ public class PerformanceTest {
         testSortPerformance(SortEnum.ShellSort);
     }
 
+
     /**
      * Runs selected sorting algorithm with different Arrays
      * and prints duration to console.
@@ -45,8 +46,8 @@ public class PerformanceTest {
     private static void testSortPerformance(SortEnum sort){
         long startTime;
         long endTime;
-        int small = 20000;
-        int large = 40000;
+        int small = 5_000_000;
+        int large = 10_000_000;
 
         int[] unsortedSmall = getRandomArray(small);
         int[] unsorted = getRandomArray(large);

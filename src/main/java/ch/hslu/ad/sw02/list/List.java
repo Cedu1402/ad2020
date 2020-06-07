@@ -17,10 +17,48 @@ public class List {
         }
         Node node = this.head;
         int counter = 1;
-        while (node.getNext() != null) {
-            node = node.getNext();
+        while (node.hasNext()) {
+            node = node.next();
             counter ++;
         }
         return counter;
+    }
+
+    public boolean contains(Allocation item){
+        Node node = this.head;
+        if(node.getItem().equals(item)){
+            return true;
+        }
+        while (node.hasNext()) {
+            node = node.next();
+            if(node.getItem().equals(item)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Allocation poll(){
+        Allocation item = this.head.getItem();
+        this.head = this.head.next();
+        return item;
+    }
+
+    public void remove(Allocation item){
+        Node node = this.head;
+        if(this.head.getItem().equals(item)){
+            this.head = this.head.next();
+        }
+        while (node.hasNext()) {
+            if(node.next().getItem().equals(item)){
+                if(!node.next().hasNext()){
+                    node.setNext(null);
+                }else{
+                    node.setNext(node.next().next());
+                }
+                return;
+            }
+            node = node.next();
+        }
     }
 }

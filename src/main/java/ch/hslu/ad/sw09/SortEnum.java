@@ -5,7 +5,7 @@ public enum SortEnum {
     SelectionSort( "Selection Sort"),
     BubbleSort("Bubble Sort"),
     BubbleSortOptimized("Bubble Sort Optimized"),
-    ShellSort(" Shell Sort");
+    ShellSort("Shell Sort");
 
     SortEnum(String value){
         this.value = value;

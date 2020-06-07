@@ -64,11 +64,8 @@ public class Sort{
         for(int i = maxHibbard - 2; i >=  0; i--){
             stepSize[i] = stepSize[i+1] * 2 + 1;
         }
-        // {3, 2, 6, 3, 2}
         for(int step = 0; step < stepSize.length; step++){
-            for(int i = stepSize[step]; i < a.length; i = i + stepSize[step]){
-
-
+            for(int i = stepSize[step]; i < a.length; i++){
                 for(int j = i - stepSize[step]; j >= 0 && a[j] > a[j + stepSize[step]]; j = j - stepSize[step]){
                     swap(a, j + stepSize[step], j);
                 }

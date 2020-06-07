@@ -48,12 +48,11 @@ public class SortTest {
         Sort.shellSort(test);
         assertEquals(2, test[0]);
         assertEquals(3, test[1]);
-        assertEquals(4, test[2]);
         assertEquals(8, test[test.length -1]);
     }
 
     @Test
-    void testShellSortHard() {
+    void testShellSortBigArray() {
         Random random = new Random();
         int[] test = random
                 .ints(20000, 10,500000)
@@ -64,4 +63,5 @@ public class SortTest {
             assertTrue(test[i] <= test[i + 1]);
         }
     }
+
 }

@@ -1,16 +1,12 @@
 package ch.hslu.ad.sw02.list;
 import ch.hslu.ad.sw02.Allocation;
 
-public class Node {
+public class Node implements Iterator{
     private Node next;
     private Allocation item;
 
     public Node(Allocation item){
         this.item = item;
-    }
-
-    public Node getNext() {
-        return next;
     }
 
     public void setNext(Node next) {
@@ -21,5 +17,14 @@ public class Node {
         return item;
     }
 
+    @Override
+    public boolean hasNext() {
+        return next != null;
+    }
+
+    @Override
+    public Node next() {
+        return next;
+    }
 }
 
