@@ -8,10 +8,29 @@ public interface Node<T extends Comparable<T>> {
     void add(T element);
 
     /**
-     * Access element of node.
-     * @return element of node.
+     * Get element of node.
+     * @return element.
      */
     T getElement();
+
+    /**
+     * Search for element with in order traversing.
+     * @return if element was found.
+     */
+    boolean inOrderSearch(T element);
+
+    /**
+     * Search for element with pre order traversing.
+     * @return if element was found.
+     */
+    boolean preOrderSearch(T element);
+
+
+    /**
+     * Search for element with post order traversing.
+     * @return if element was found.
+     */
+    boolean postOrderSearch(T element);
 
     /**
      * Get left child node.

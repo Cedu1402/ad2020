@@ -36,7 +36,8 @@ public class TreeMain {
         Mountain testberg7 = new Mountain(5);
         testTree.add(testberg7);
 
+        testTree.postOrderSearch(testberg5);
 
-        System.out.println(testTree.toString());
+        // System.out.println(testTree.toString());
     }
 }

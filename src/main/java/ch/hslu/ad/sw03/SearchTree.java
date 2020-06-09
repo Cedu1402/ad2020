@@ -30,7 +30,26 @@ public class SearchTree<T extends Comparable<T>> implements Tree<T>{
     }
 
     @Override
-    public boolean search(T element) {
-        return false;
+    public boolean inOrderSearch(T element) {
+        if(this.root == null){
+            return false;
+        }
+        return this.root.inOrderSearch(element);
+    }
+
+    @Override
+    public boolean postOrderSearch(T element) {
+        if(this.root == null){
+            return false;
+        }
+        return this.root.postOrderSearch(element);
+    }
+
+    @Override
+    public boolean preOrderSearch(T element) {
+        if(this.root == null){
+            return false;
+        }
+        return this.root.preOrderSearch(element);
     }
 }

@@ -18,5 +18,18 @@ public interface Tree <T extends Comparable<T>> {
      * @param element element to search for.
      * @return if element is in tree.
      */
-    boolean search(T element);
+    boolean inOrderSearch(T element);
+
+
+    /**
+     * Search for element with post order traversing.
+     * @return if element was found.
+     */
+    boolean postOrderSearch(T element);
+
+    /**
+     * Search for element with pre order traversing.
+     * @return if element was found.
+     */
+    boolean preOrderSearch(T element);
 }

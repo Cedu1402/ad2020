@@ -1,9 +1,13 @@
 package ch.hslu.ad.sw03;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class TreeNode<T extends Comparable<T>> implements Node<T>{
     private Node<T> leftNode;
     private Node<T> rightNode;
     private T element;
+    private static Logger LOG = LogManager.getLogger();
 
     public TreeNode(T element){
         this.element = element;
@@ -48,6 +52,66 @@ public class TreeNode<T extends Comparable<T>> implements Node<T>{
     public T getElement() {
         return this.element;
     }
+
+    @Override
+    public boolean inOrderSearch(T element) {
+        if(this.leftNode != null){
+            // search in child nodes and return true if found.
+            if(this.leftNode.inOrderSearch(element)){
+                return true;
+            }
+        }
+        LOG.info("\nSerach Node : " + this.getElement().toString());
+        if (this.getElement().equals(element)){
+            return true;
+        }
+        if(this.rightNode != null){
+            // search in child nodes and return true if found.
+            if(this.rightNode.inOrderSearch(element)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean preOrderSearch(T element) {
+        LOG.info("\nSerach Node : " + this.getElement().toString());
+        if(this.getElement().equals(element)){
+            return true;
+        }
+        if(this.leftNode != null){
+            if(this.leftNode.preOrderSearch(element)){
+                return true;
+            }
+        }
+        if(this.rightNode != null){
+            if(this.rightNode.preOrderSearch(element)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean postOrderSearch(T element) {
+        if(this.leftNode != null){
+            if(this.leftNode.postOrderSearch(element)){
+                return true;
+            }
+        }
+        if(this.rightNode != null){
+            if(this.rightNode.postOrderSearch(element)){
+                return true;
+            }
+        }
+        LOG.info("\nSerach Node : " + this.getElement().toString());
+        if(this.getElement().equals(element)){
+            return true;
+        }
+        return false;
+    }
+
 
     @Override
     public Node<T> getLeftChild() {
