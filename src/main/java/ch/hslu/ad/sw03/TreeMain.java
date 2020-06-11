@@ -1,6 +1,8 @@
 package ch.hslu.ad.sw03;
 
 
+import java.util.Objects;
+
 public class TreeMain {
 
     public static void main(String[] args){
@@ -36,8 +38,8 @@ public class TreeMain {
         Mountain testberg7 = new Mountain(5);
         testTree.add(testberg7);
 
-        testTree.postOrderSearch(testberg5);
-
+        //testTree.postOrderSearch(testberg5);
+        System.out.println((12 % 10));
         // System.out.println(testTree.toString());
     }
 }
