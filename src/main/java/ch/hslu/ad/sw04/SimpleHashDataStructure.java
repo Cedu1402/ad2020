@@ -35,7 +35,6 @@ public class SimpleHashDataStructure implements SimpleDataStructure {
                throw new IllegalStateException("Data Structre Full");
            }
        }
-
     }
 
     @Override
