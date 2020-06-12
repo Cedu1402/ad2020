@@ -37,12 +37,21 @@ public final class Turf {
      */
     public static void main(final String[] args) {
         final Synch starterBox = new Latch();
-        Thread thread;
+        Thread[] threads = new Thread[5];
+
         for (int i = 1; i < 6; i++) {
-            thread = new Thread(new RaceHorse(starterBox), "Horse " + i);
+            Thread thread = new Thread(new RaceHorse(starterBox), "Horse " + i);
             thread.start();
+            threads[i -1] = thread;
+        }
+
+        try{
+            Thread.sleep(1000);
+        }catch (InterruptedException ex){
+            LOG.info("Start was interupted");
         }
         LOG.info("Start...");
         starterBox.release();
+        starterBox.stop(threads);
     }
 }
