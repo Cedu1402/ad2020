@@ -1,4 +1,4 @@
-package ch.hslu.ad.sw09;
+package ch.hslu.ad.sw10;
 
 public class Sort{
 
