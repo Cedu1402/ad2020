@@ -49,7 +49,7 @@ public final class DemoBoundedBuffer {
         final ThreadGroup consGroup = new ThreadGroup("Consumer-Threads");
         final BoundedBuffer<Integer> queue = new BoundedBuffer<>(50);
         for (int i = 0; i < nPros; i++) {
-            producers[i] = new Producer(queue, random.nextInt(10000));
+            producers[i] = new Producer(queue, 5);
             new Thread(prosGroup, producers[i], "Prod  " + (char) (i + 65)).start();
         }
         for (int i = 0; i < mCons; i++) {
